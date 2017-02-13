@@ -2,12 +2,14 @@
   <div class="hello">
     <test1 class="item" ref="a"></test1>
     <test2 class="item" ref="b"></test2>
+    <test3 class="item" ref="c"></test3>
   </div>
 </template>
 
 <script>
   import test1 from './test1.vue';
   import test2 from './test2.vue';
+  import test3 from './test3.vue';
 
   export default {
   name: 'hello',
@@ -19,6 +21,7 @@
   components:{
     test1,
     test2,
+    test3
   },
   mounted:function () {
     this.$refs.a.show();
