@@ -14,7 +14,9 @@
         },
         render(){
             var obj1 = {
-                vnode:<ToggleContent title="works fine">works fine</ToggleContent>
+                vnode:<ToggleContent title="works fine">
+                    <div>works fine</div>
+                </ToggleContent>
             };
             var obj2 = {
                 vnode:<ToggleContent title="works not fine">
