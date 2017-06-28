@@ -31,22 +31,17 @@
 <template>
     <div class="body">
         <div class="title" :class="{show:show}" @click="show = !show">
-            {{title||"1"}}
+            {{title}}
         </div>
         <div class="_content" v-show="show">
             <slot></slot>
-            <span class="markdown" v-html="html"></span>
         </div>
     </div>
 </template>
 <script type="text/ecmascript-6">
     export default {
         props:{
-            title:String,
-            html:String,
-            open:{
-                type:Boolean
-            }
+            title:String
         },
         data(){
             return {
@@ -57,7 +52,6 @@
         methods: {},
         components: {},
         mounted(){
-            this.show = this.open;
         }
     }
 </script>
