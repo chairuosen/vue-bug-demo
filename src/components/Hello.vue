@@ -1,6 +1,4 @@
 <script>
-    import Child from './Child.vue';
-    import ToggleContent from './ToggleContent.vue';
     import Abc from './Abc.vue';
 
     export default {
@@ -8,31 +6,27 @@
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App',
+                idx:0,
             }
         },
         mounted: function () {
 
         },
         render(){
-            var obj1 = {
-                vnode:<ToggleContent title="works fine">
-                    <div>works fine</div>
-                </ToggleContent>
-            };
-            var obj2 = {
-                vnode:<ToggleContent title="this works not fine. click me">
-                    <a href="/">11111</a>
-                </ToggleContent>
-            }; // a2
-            var obj3 = {
-                vnode:<Abc>
-                    <a href="/">But this component works also fine with `a` tag.</a>
-                </Abc>
-            };
+
+            var list = [
+                <Abc title="this is component 0"></Abc>,
+                <Abc title="this is component 1"></Abc>
+            ];
+
             return <div>
-                <Child obj={obj1}/>
-                <Child obj={obj2}/>
-                <Child obj={obj3}/>
+                {list[this.idx]}
+                <button onClick={ ()=> {
+                    this.idx=0;
+                }}>0</button>
+                <button onClick={()=> {
+                    this.idx=1;
+                }}>1</button>
             </div>
         }
     }

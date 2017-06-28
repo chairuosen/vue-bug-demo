@@ -3,13 +3,18 @@
 </style>
 <template>
     <div>
-        <slot></slot>
+        {{title}}
+        {{count}}
+        <button @click="count++">+</button>
     </div>
 </template>
 <script type="text/ecmascript-6">
     export default {
+        props:['title'],
         data(){
-            return {}
+            return {
+                count:0
+            }
         },
         computed: {},
         methods: {},
